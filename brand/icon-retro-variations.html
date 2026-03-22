@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PennyMints — Retro Mint Icon Variations</title>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Inter:wght@400;500;600;700&family=Pacifico&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1A2F35;
+    color: #E0EDE8;
+    font-family: 'Inter', sans-serif;
+    padding: 40px 20px;
+  }
+
+  .page-title {
+    text-align: center;
+    font-family: 'Righteous', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #4A7A6A;
+    margin-bottom: 8px;
+  }
+
+  .page-sub {
+    text-align: center;
+    font-size: 12px;
+    color: #2A4A40;
+    margin-bottom: 60px;
+  }
+
+  .set-label {
+    font-family: 'Righteous', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #4A7A6A;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .set-desc {
+    text-align: center;
+    font-size: 12px;
+    color: #2A4A40;
+    margin-bottom: 24px;
+  }
+
+  .icon-row {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+
+  .icon-cell { text-align: center; }
+
+  .icon-box {
+    width: 130px;
+    height: 130px;
+    border-radius: 30px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .icon-type-label {
+    font-size: 11px;
+    color: #4A7A6A;
+  }
+
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: #2A4A40;
+    margin: 0 auto 56px;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     SET 1 — REFINED ORIGINAL
+     Tighter craft, crisper edges, same soul
+     ════════════════════════════════════════════════════════════ */
+
+  .s1-mint-tin {
+    background: linear-gradient(145deg, #243E44, #1A2F35);
+    border: 2px solid #66DDAA;
+    box-shadow: 0 0 24px rgba(102,221,170,0.08), inset 0 1px 0 rgba(102,221,170,0.1);
+  }
+  .s1-mint-tin .inner {
+    font-family: 'Righteous', sans-serif;
+    font-size: 44px;
+    color: #66DDAA;
+    text-shadow: 0 0 20px rgba(102,221,170,0.25);
+  }
+
+  .s1-embossed {
+    background: linear-gradient(155deg, #F5D88A, #D4A535, #C4922A);
+    box-shadow: 0 8px 24px rgba(212,165,53,0.2), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .s1-embossed .ring {
+    width: 82px; height: 82px; border-radius: 50%;
+    border: 2.5px solid #8B691480;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .s1-embossed .ring .text {
+    font-family: 'Righteous', sans-serif;
+    font-size: 34px;
+    color: #8B6914;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .s1-vintage {
+    background: linear-gradient(145deg, #1E3840, #152830);
+    border: 1.5px solid #2A4A4880;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+  }
+  .s1-vintage .seal {
+    width: 82px; height: 82px; border-radius: 50%;
+    border: 2px solid #D4A53560;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 6px #D4A53510;
+  }
+  .s1-vintage .seal .text {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color: #F5D060;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+
+  .s1-mint-badge {
+    background: linear-gradient(145deg, #7AE8BB, #5BD9A0, #44C88A);
+    box-shadow: 0 8px 24px rgba(91,217,160,0.15), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .s1-mint-badge .text {
+    font-family: 'Righteous', sans-serif;
+    font-size: 42px;
+    color: #1A2F35;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.1);
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     SET 2 — DEEPER / MOODIER
+     Darker tones, more contrast, premium feel
+     ════════════════════════════════════════════════════════════ */
+
+  .s2-mint-tin {
+    background: linear-gradient(145deg, #1A2A30, #0F1E22);
+    border: 1.5px solid #66DDAA90;
+    box-shadow: 0 0 30px rgba(102,221,170,0.06);
+  }
+  .s2-mint-tin .inner {
+    font-family: 'Righteous', sans-serif;
+    font-size: 46px;
+    color: #66DDAA;
+    opacity: 0.9;
+  }
+
+  .s2-embossed {
+    background: linear-gradient(155deg, #E8C860, #C4922A, #A07820);
+    box-shadow: 0 8px 28px rgba(160,120,32,0.25);
+  }
+  .s2-embossed .ring {
+    width: 84px; height: 84px; border-radius: 50%;
+    border: 2px solid #6B4E0E60;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.1);
+  }
+  .s2-embossed .ring .text {
+    font-family: 'Righteous', sans-serif;
+    font-size: 36px;
+    color: #6B4E0E;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+  }
+
+  .s2-vintage {
+    background: linear-gradient(145deg, #0F1E22, #0A1418);
+    border: 1px solid #1A2A30;
+  }
+  .s2-vintage .seal {
+    width: 86px; height: 86px; border-radius: 50%;
+    border: 1.5px solid #C4922A50;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .s2-vintage .seal .text {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: #F5D060;
+    text-shadow: 0 0 16px rgba(245,208,96,0.2);
+  }
+
+  .s2-mint-badge {
+    background: linear-gradient(145deg, #44C88A, #2DAA74, #1A8F5A);
+    box-shadow: 0 8px 28px rgba(45,170,116,0.15);
+  }
+  .s2-mint-badge .text {
+    font-family: 'Righteous', sans-serif;
+    font-size: 44px;
+    color: #0F1E22;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     SET 3 — SOFTER / ROUNDED
+     Fredoka font, gentler edges, more approachable
+     ════════════════════════════════════════════════════════════ */
+
+  .s3-mint-tin {
+    background: linear-gradient(145deg, #243E44, #1E3438);
+    border: 2.5px solid #66DDAA60;
+    border-radius: 34px;
+    box-shadow: 0 0 20px rgba(102,221,170,0.06);
+  }
+  .s3-mint-tin .inner {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #66DDAA;
+  }
+
+  .s3-embossed {
+    background: linear-gradient(155deg, #FFE088, #F5D060, #D4A535);
+    border-radius: 34px;
+    box-shadow: 0 6px 20px rgba(212,165,53,0.2);
+  }
+  .s3-embossed .ring {
+    width: 80px; height: 80px; border-radius: 50%;
+    border: 2.5px solid #B8872A50;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .s3-embossed .ring .text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: #8B6914;
+  }
+
+  .s3-vintage {
+    background: linear-gradient(145deg, #1E3840, #1A3035);
+    border: 1.5px solid #2A4A48;
+    border-radius: 34px;
+  }
+  .s3-vintage .seal {
+    width: 80px; height: 80px; border-radius: 50%;
+    border: 2px solid #D4A53550;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .s3-vintage .seal .text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #F5D060;
+  }
+
+  .s3-mint-badge {
+    background: linear-gradient(145deg, #88E8C0, #66DDAA, #55D0A0);
+    border-radius: 34px;
+    box-shadow: 0 6px 20px rgba(102,221,170,0.15);
+  }
+  .s3-mint-badge .text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    color: #1A2F35;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     SET 4 — COIN FORWARD
+     Every icon features the coin more prominently
+     ════════════════════════════════════════════════════════════ */
+
+  .s4-mint-tin {
+    background: linear-gradient(145deg, #243E44, #1A2F35);
+    border: 2px solid #66DDAA;
+  }
+  .s4-mint-tin .coin {
+    width: 76px; height: 76px; border-radius: 50%;
+    background: linear-gradient(145deg, #F5D060, #D4A535);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Righteous', sans-serif; font-size: 30px; color: #8B6914;
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.2), 0 4px 14px rgba(0,0,0,0.3);
+  }
+
+  .s4-embossed {
+    background: linear-gradient(155deg, #F5D88A, #D4A535, #B8872A);
+    box-shadow: 0 8px 24px rgba(184,135,42,0.2);
+  }
+  .s4-embossed .coin {
+    width: 82px; height: 82px; border-radius: 50%;
+    border: 3px solid #8B691440;
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 35% 35%, #FFE88A, #F5D060 50%, #D4A535);
+    box-shadow: inset 0 -3px 8px rgba(0,0,0,0.2), inset 0 3px 6px rgba(255,255,255,0.15);
+  }
+  .s4-embossed .coin .text {
+    font-family: 'Righteous', sans-serif;
+    font-size: 32px;
+    color: #8B6914;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .s4-vintage {
+    background: linear-gradient(145deg, #152830, #0F1E22);
+    border: 1px solid #2A4A4860;
+  }
+  .s4-vintage .coin-wrap {
+    position: relative;
+  }
+  .s4-vintage .coin {
+    width: 78px; height: 78px; border-radius: 50%;
+    background: linear-gradient(145deg, #F5D060, #C4922A);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 20px rgba(245,208,96,0.15), inset 0 -3px 6px rgba(0,0,0,0.25);
+  }
+  .s4-vintage .coin .text {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #8B6914;
+  }
+  .s4-vintage .glow {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid #F5D06020;
+  }
+
+  .s4-mint-badge {
+    background: linear-gradient(145deg, #66DDAA, #44C88A);
+    box-shadow: 0 8px 24px rgba(68,200,138,0.15);
+  }
+  .s4-mint-badge .coin {
+    width: 76px; height: 76px; border-radius: 50%;
+    background: linear-gradient(145deg, #F5D060, #D4A535);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Righteous', sans-serif; font-size: 30px; color: #1A2F35;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     SET 5 — MINIMAL / CONFIDENT
+     Less detail, more presence, clean and bold
+     ════════════════════════════════════════════════════════════ */
+
+  .s5-mint-tin {
+    background: #1E3840;
+    border: 2px solid #66DDAA;
+  }
+  .s5-mint-tin .inner {
+    font-family: 'Righteous', sans-serif;
+    font-size: 50px;
+    color: #66DDAA;
+  }
+
+  .s5-embossed {
+    background: #D4A535;
+  }
+  .s5-embossed .text {
+    font-family: 'Righteous', sans-serif;
+    font-size: 46px;
+    color: #FFF;
+    text-shadow: 0 2px 0 #B8872A;
+  }
+
+  .s5-vintage {
+    background: #0F1E22;
+    border: 2px solid #D4A53540;
+  }
+  .s5-vintage .text {
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+    color: #F5D060;
+  }
+
+  .s5-mint-badge {
+    background: #66DDAA;
+  }
+  .s5-mint-badge .text {
+    font-family: 'Righteous', sans-serif;
+    font-size: 48px;
+    color: #1A2F35;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    color: #2A4A40;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-title">PennyMints — Retro Mint Icons</div>
+<div class="page-sub">5 sets × 4 icons · Mint Tin · Embossed Coin · Vintage Seal · Mint Badge</div>
+
+<!-- ═══ SET 1: REFINED ORIGINAL ═══ -->
+<div class="set-label">Set 1 — Refined Original</div>
+<div class="set-desc">Crisper craft, same soul as Variation 4</div>
+<div class="icon-row">
+  <div class="icon-cell">
+    <div class="icon-box s1-mint-tin"><div class="inner">¢</div></div>
+    <div class="icon-type-label">Mint Tin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s1-embossed"><div class="ring"><div class="text">PM</div></div></div>
+    <div class="icon-type-label">Embossed Coin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s1-vintage"><div class="seal"><div class="text">pm</div></div></div>
+    <div class="icon-type-label">Vintage Seal</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s1-mint-badge"><div class="text">PM</div></div>
+    <div class="icon-type-label">Mint Badge</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ SET 2: DEEPER / MOODIER ═══ -->
+<div class="set-label">Set 2 — Deeper & Moodier</div>
+<div class="set-desc">Darker tones, more contrast, premium feel</div>
+<div class="icon-row">
+  <div class="icon-cell">
+    <div class="icon-box s2-mint-tin"><div class="inner">¢</div></div>
+    <div class="icon-type-label">Mint Tin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s2-embossed"><div class="ring"><div class="text">PM</div></div></div>
+    <div class="icon-type-label">Embossed Coin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s2-vintage"><div class="seal"><div class="text">pm</div></div></div>
+    <div class="icon-type-label">Vintage Seal</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s2-mint-badge"><div class="text">PM</div></div>
+    <div class="icon-type-label">Mint Badge</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ SET 3: SOFTER / ROUNDED ═══ -->
+<div class="set-label">Set 3 — Softer & Rounded</div>
+<div class="set-desc">Fredoka font, gentler edges, more approachable for kids</div>
+<div class="icon-row">
+  <div class="icon-cell">
+    <div class="icon-box s3-mint-tin"><div class="inner">¢</div></div>
+    <div class="icon-type-label">Mint Tin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s3-embossed"><div class="ring"><div class="text">PM</div></div></div>
+    <div class="icon-type-label">Embossed Coin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s3-vintage"><div class="seal"><div class="text">pm</div></div></div>
+    <div class="icon-type-label">Vintage Seal</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s3-mint-badge"><div class="text">PM</div></div>
+    <div class="icon-type-label">Mint Badge</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ SET 4: COIN FORWARD ═══ -->
+<div class="set-label">Set 4 — Coin Forward</div>
+<div class="set-desc">Every icon prominently features a gold coin</div>
+<div class="icon-row">
+  <div class="icon-cell">
+    <div class="icon-box s4-mint-tin"><div class="coin">¢</div></div>
+    <div class="icon-type-label">Mint Tin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s4-embossed"><div class="coin"><div class="text">PM</div></div></div>
+    <div class="icon-type-label">Embossed Coin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s4-vintage">
+      <div class="coin-wrap">
+        <div class="glow"></div>
+        <div class="coin"><div class="text">pm</div></div>
+      </div>
+    </div>
+    <div class="icon-type-label">Vintage Seal</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s4-mint-badge"><div class="coin">PM</div></div>
+    <div class="icon-type-label">Mint Badge</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ SET 5: MINIMAL / CONFIDENT ═══ -->
+<div class="set-label">Set 5 — Minimal & Confident</div>
+<div class="set-desc">Stripped back, bold presence, clean and simple</div>
+<div class="icon-row">
+  <div class="icon-cell">
+    <div class="icon-box s5-mint-tin"><div class="inner">¢</div></div>
+    <div class="icon-type-label">Mint Tin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s5-embossed"><div class="text">PM</div></div>
+    <div class="icon-type-label">Embossed Coin</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s5-vintage"><div class="text">pm</div></div>
+    <div class="icon-type-label">Vintage Seal</div>
+  </div>
+  <div class="icon-cell">
+    <div class="icon-box s5-mint-badge"><div class="text">PM</div></div>
+    <div class="icon-type-label">Mint Badge</div>
+  </div>
+</div>
+
+<div class="footer">PennyMints — Retro Mint Icon Exploration — March 2026</div>
+
+</body>
+</html>

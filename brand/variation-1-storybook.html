@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PennyMints — Variation 1: Storybook</title>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #FDF6E3;
+    color: #3D2E1E;
+    font-family: 'Quicksand', sans-serif;
+    padding: 40px;
+    min-height: 100vh;
+  }
+
+  .variation-tag {
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #B8A080;
+    margin-bottom: 12px;
+  }
+
+  .variation-name {
+    text-align: center;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 18px;
+    color: #8B6914;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+  }
+
+  /* ─── LOGO ─── */
+  .logo-area {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  .logo-badge {
+    display: inline-block;
+    background: #FFFCF5;
+    border: 3px solid #D4A535;
+    border-radius: 100px;
+    padding: 20px 48px;
+    box-shadow: 0 4px 20px rgba(180, 140, 60, 0.15), inset 0 2px 8px rgba(255,255,255,0.6);
+    position: relative;
+  }
+
+  .logo-badge::before {
+    content: '✦';
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #F5C542;
+  }
+
+  .logo-badge::after {
+    content: '✦';
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #F5C542;
+  }
+
+  .logo-text {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 52px;
+    line-height: 1;
+  }
+
+  .logo-text .penny { color: #C4922A; }
+  .logo-text .mints { color: #2D8B5E; }
+
+  .logo-tagline {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: #B8872A;
+    margin-top: 12px;
+  }
+
+  /* ─── PALETTE ─── */
+  .section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #B8A080;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .palette {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+  }
+
+  .swatch {
+    text-align: center;
+  }
+
+  .swatch-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    border: 3px solid #FFFCF5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .swatch-name { font-size: 11px; font-weight: 700; color: #5C4A32; }
+  .swatch-hex { font-size: 10px; color: #B8A080; font-family: monospace; }
+
+  /* ─── ICON CONCEPTS ─── */
+  .icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 640px;
+    margin: 0 auto 60px;
+  }
+
+  .icon-card {
+    text-align: center;
+  }
+
+  .icon-box {
+    width: 110px;
+    height: 110px;
+    border-radius: 26px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(0,0,0,0.06);
+  }
+
+  .icon-label { font-size: 11px; color: #B8A080; }
+
+  .icon-storybook {
+    background: linear-gradient(135deg, #FFF8E7, #F5E6C8);
+  }
+  .icon-storybook .inner {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #F5C542, #C4922A);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 28px;
+    color: #FFF8E7;
+    box-shadow: 0 3px 10px rgba(180,120,30,0.3), inset 0 -2px 4px rgba(0,0,0,0.15);
+  }
+
+  .icon-forest {
+    background: linear-gradient(135deg, #2D5A3F, #1B3D2A);
+  }
+  .icon-forest .inner {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 40px;
+    color: #F5C542;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .icon-parchment {
+    background: linear-gradient(135deg, #F5E6C8, #E8D5B0);
+    position: relative;
+  }
+  .icon-parchment::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 2px dashed #C4922A40;
+    border-radius: 18px;
+  }
+  .icon-parchment .inner {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 32px;
+    color: #8B6914;
+    z-index: 1;
+  }
+
+  .icon-copper {
+    background: linear-gradient(145deg, #C4922A, #8B6914);
+  }
+  .icon-copper .inner {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 36px;
+    color: #FFF8E7;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  /* ─── NARRATIVE ─── */
+  .story-panel {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    background: #FFFCF5;
+    border: 2px solid #E8D5B0;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(180,140,60,0.08);
+  }
+
+  .story-panel h2 {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 24px;
+    color: #C4922A;
+    margin-bottom: 16px;
+  }
+
+  .story-panel p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6B5840;
+  }
+
+  .story-panel em {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: #2D8B5E;
+    font-style: normal;
+  }
+
+  /* ─── CHARACTERS ─── */
+  .chars {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+  }
+
+  .char {
+    background: #FFFCF5;
+    border: 2px solid #E8D5B0;
+    border-radius: 16px;
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 100px;
+  }
+
+  .char-emoji { font-size: 28px; margin-bottom: 4px; }
+  .char-name { font-family: 'Lilita One', sans-serif; font-size: 14px; }
+  .char-role { font-size: 10px; color: #B8A080; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ─── TYPE ─── */
+  .type-grid {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .type-box {
+    background: #FFFCF5;
+    border: 2px solid #E8D5B0;
+    border-radius: 14px;
+    padding: 24px;
+  }
+
+  .type-label { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #B8A080; margin-bottom: 8px; }
+
+  .type-display { font-family: 'Lilita One', sans-serif; font-size: 28px; color: #C4922A; }
+  .type-body { font-family: 'Quicksand', sans-serif; font-size: 16px; color: #5C4A32; line-height: 1.6; }
+  .type-accent { font-family: 'Caveat', cursive; font-size: 26px; color: #2D8B5E; }
+
+  .mood {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: #B8A080;
+    padding: 40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="variation-tag">Variation 1 of 5</div>
+<div class="variation-name">✦ Storybook Warmth ✦</div>
+
+<div class="logo-area">
+  <div class="logo-badge">
+    <div class="logo-text">
+      <span class="penny">Penny</span><span class="mints">Mints</span>
+    </div>
+  </div>
+  <div class="logo-tagline">tales worth more than gold</div>
+</div>
+
+<div class="section-label">Palette</div>
+<div class="palette">
+  <div class="swatch">
+    <div class="swatch-circle" style="background: linear-gradient(145deg, #C4922A, #8B6914);"></div>
+    <div class="swatch-name">Old Penny</div>
+    <div class="swatch-hex">#C4922A</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-circle" style="background: linear-gradient(145deg, #2D8B5E, #1F6B45);"></div>
+    <div class="swatch-name">Forest Mint</div>
+    <div class="swatch-hex">#2D8B5E</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-circle" style="background: linear-gradient(145deg, #8B6914, #6B4E0E);"></div>
+    <div class="swatch-name">Copper Deep</div>
+    <div class="swatch-hex">#8B6914</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-circle" style="background: linear-gradient(145deg, #FDF6E3, #F5E6C8);"></div>
+    <div class="swatch-name">Parchment</div>
+    <div class="swatch-hex">#FDF6E3</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-circle" style="background: linear-gradient(145deg, #E8D5B0, #D4C09A);"></div>
+    <div class="swatch-name">Aged Paper</div>
+    <div class="swatch-hex">#E8D5B0</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-circle" style="background: linear-gradient(145deg, #3D2E1E, #2A1F14);"></div>
+    <div class="swatch-name">Story Dark</div>
+    <div class="swatch-hex">#3D2E1E</div>
+  </div>
+</div>
+
+<div class="section-label">App Icons</div>
+<div class="icons">
+  <div class="icon-card">
+    <div class="icon-box icon-storybook"><div class="inner">¢</div></div>
+    <div class="icon-label">Classic Coin</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-forest"><div class="inner">PM</div></div>
+    <div class="icon-label">Forest Mark</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-parchment"><div class="inner">PM</div></div>
+    <div class="icon-label">Parchment</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-copper"><div class="inner">¢</div></div>
+    <div class="icon-label">Solid Copper</div>
+  </div>
+</div>
+
+<div class="section-label">Typography</div>
+<div class="type-grid">
+  <div class="type-box">
+    <div class="type-label">Display — Lilita One</div>
+    <div class="type-display">The Last PennyMint</div>
+  </div>
+  <div class="type-box">
+    <div class="type-label">Body — Quicksand</div>
+    <div class="type-body">Once upon a time, in a workshop hidden beneath an old oak tree, five friends kept a secret the whole world had forgotten.</div>
+  </div>
+  <div class="type-box">
+    <div class="type-label">Handwritten — Caveat</div>
+    <div class="type-accent">You found a penny! +3 coins</div>
+  </div>
+</div>
+
+<div class="section-label">Characters</div>
+<div class="chars">
+  <div class="char"><div class="char-emoji">🐹</div><div class="char-name" style="color:#D4862A;">Hammy</div><div class="char-role">Earner</div></div>
+  <div class="char"><div class="char-emoji">🐢</div><div class="char-name" style="color:#2D8B5E;">Pearl</div><div class="char-role">Saver</div></div>
+  <div class="char"><div class="char-emoji">🦝</div><div class="char-name" style="color:#6B6B6B;">Ziggy</div><div class="char-role">Spender</div></div>
+  <div class="char"><div class="char-emoji">🦌</div><div class="char-name" style="color:#A07850;">Willow</div><div class="char-role">Giver</div></div>
+  <div class="char"><div class="char-emoji">🦊</div><div class="char-name" style="color:#D4652A;">Sparks</div><div class="char-role">Thinker</div></div>
+</div>
+
+<div class="section-label">Brand Story</div>
+<div class="story-panel">
+  <h2>Once upon a penny...</h2>
+  <p>
+    The grown-ups stopped making pennies. They said they were too small, too old, too slow.<br><br>
+    But five friends knew the truth: <em>every penny holds a story</em>. And stories are the most valuable thing in the world.<br><br>
+    So they built a workshop — the last PennyMint — and they need <em>your</em> help to keep the stories alive.
+  </p>
+</div>
+
+<div class="mood">warm · handcrafted · once-upon-a-time · golden · woodland · trusted</div>
+
+</body>
+</html>

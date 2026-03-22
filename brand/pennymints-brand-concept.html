@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PennyMints — Brand Concept Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0F0F13;
+    color: #E8E4DF;
+    font-family: 'Nunito', sans-serif;
+    padding: 40px;
+  }
+
+  .page-title {
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #7A7268;
+    margin-bottom: 60px;
+  }
+
+  /* ─── LOGO CONCEPTS ─── */
+  .logo-section {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .logo-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .logo-coin {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #F5C542, #D4A535, #C4922A);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 0 0 4px #B8872490,
+      0 0 30px #F5C54230,
+      inset 0 -3px 6px rgba(0,0,0,0.3),
+      inset 0 3px 6px rgba(255,255,255,0.2);
+    position: relative;
+  }
+
+  .logo-coin::after {
+    content: '¢';
+    font-family: 'Fredoka', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #8B6914;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+  }
+
+  .logo-coin .sparkle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: -2px;
+    right: 2px;
+  }
+
+  .logo-coin .sparkle::before,
+  .logo-coin .sparkle::after {
+    content: '';
+    position: absolute;
+    background: #FFF8DC;
+    border-radius: 2px;
+  }
+  .logo-coin .sparkle::before {
+    width: 2px;
+    height: 12px;
+    left: 5px;
+    top: 0;
+  }
+  .logo-coin .sparkle::after {
+    width: 12px;
+    height: 2px;
+    top: 5px;
+    left: 0;
+  }
+
+  .logo-wordmark {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .logo-wordmark .penny {
+    color: #F5C542;
+  }
+
+  .logo-wordmark .mints {
+    color: #5BD9A0;
+  }
+
+  .logo-tagline {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #7A7268;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  /* ─── ALTERNATIVE LOGOS ─── */
+  .logo-alts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 900px;
+    margin: 60px auto;
+  }
+
+  .logo-alt {
+    background: #18181F;
+    border-radius: 20px;
+    padding: 40px 24px;
+    text-align: center;
+    border: 1px solid #2A2A35;
+  }
+
+  .logo-alt-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #5A5550;
+    margin-bottom: 20px;
+  }
+
+  .logo-alt .mark {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  .logo-alt .mark .penny { color: #F5C542; }
+  .logo-alt .mark .mints { color: #5BD9A0; }
+
+  .logo-alt.light {
+    background: #FDF8F0;
+    border-color: #E8E0D4;
+  }
+  .logo-alt.light .logo-alt-label { color: #B8A99A; }
+  .logo-alt.light .mark .penny { color: #D4A535; }
+  .logo-alt.light .mark .mints { color: #2DAA74; }
+
+  .logo-alt.coin-only .coin-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #F5C542, #D4A535);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #8B6914;
+    box-shadow:
+      inset 0 -2px 4px rgba(0,0,0,0.25),
+      inset 0 2px 4px rgba(255,255,255,0.2),
+      0 0 20px #F5C54220;
+  }
+
+  /* ─── COLOR PALETTE ─── */
+  .section-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #5A5550;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .palette {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+  }
+
+  .swatch {
+    text-align: center;
+  }
+
+  .swatch-color {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255,255,255,0.05);
+  }
+
+  .swatch-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #E8E4DF;
+    margin-bottom: 2px;
+  }
+
+  .swatch-hex {
+    font-size: 11px;
+    color: #5A5550;
+    font-family: monospace;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  .type-section {
+    max-width: 700px;
+    margin: 0 auto 80px;
+  }
+
+  .type-sample {
+    background: #18181F;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 16px;
+    border: 1px solid #2A2A35;
+  }
+
+  .type-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #5A5550;
+    margin-bottom: 12px;
+  }
+
+  .type-fredoka {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #F5C542;
+  }
+
+  .type-nunito {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #E8E4DF;
+    line-height: 1.6;
+  }
+
+  .type-baloo {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #5BD9A0;
+  }
+
+  /* ─── CHARACTER COLOR MAP ─── */
+  .characters {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto 80px;
+  }
+
+  .char-card {
+    background: #18181F;
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+    border: 1px solid #2A2A35;
+    transition: transform 0.2s;
+  }
+
+  .char-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .char-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+
+  .char-name {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .char-role {
+    font-size: 11px;
+    color: #7A7268;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ─── APP ICON CONCEPTS ─── */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 700px;
+    margin: 0 auto 80px;
+  }
+
+  .icon-concept {
+    text-align: center;
+  }
+
+  .icon-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .icon-concept-label {
+    font-size: 11px;
+    color: #7A7268;
+  }
+
+  /* Icon A: Gold coin on mint */
+  .icon-a {
+    background: linear-gradient(135deg, #3DDC97, #2DAA74);
+    box-shadow: 0 8px 24px rgba(61, 220, 151, 0.2);
+  }
+  .icon-a .inner-coin {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #F5C542, #D4A535);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #8B6914;
+    box-shadow:
+      inset 0 -3px 6px rgba(0,0,0,0.2),
+      inset 0 3px 6px rgba(255,255,255,0.2),
+      0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  /* Icon B: Stacked coins */
+  .icon-b {
+    background: linear-gradient(145deg, #1A1A24, #0F0F18);
+    border: 2px solid #2A2A35;
+  }
+  .icon-b .stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .icon-b .stack-coin {
+    width: 52px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #F5C542, #D4A535);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  .icon-b .stack-coin:first-child {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #8B6914;
+    background: linear-gradient(145deg, #F5C542, #D4A535);
+  }
+
+  /* Icon C: PM monogram */
+  .icon-c {
+    background: linear-gradient(135deg, #F5C542, #E8B530);
+    box-shadow: 0 8px 24px rgba(245, 197, 66, 0.2);
+  }
+  .icon-c .monogram {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    letter-spacing: -2px;
+  }
+
+  /* Icon D: Sprouting coin */
+  .icon-d {
+    background: linear-gradient(135deg, #2A5A3F, #1B3D2A);
+    box-shadow: 0 8px 24px rgba(42, 90, 63, 0.2);
+  }
+  .icon-d .sprout {
+    position: relative;
+  }
+  .icon-d .sprout-coin {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #F5C542, #D4A535);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #8B6914;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
+  }
+  .icon-d .sprout-leaf {
+    position: absolute;
+    top: -18px;
+    right: -8px;
+    font-size: 28px;
+    transform: rotate(15deg);
+  }
+
+  /* ─── NARRATIVE PANEL ─── */
+  .narrative {
+    max-width: 700px;
+    margin: 0 auto 80px;
+    background: linear-gradient(135deg, #1E1A14, #18181F);
+    border-radius: 24px;
+    padding: 48px;
+    border: 1px solid #2A2520;
+    text-align: center;
+  }
+
+  .narrative-heading {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #F5C542;
+    margin-bottom: 20px;
+  }
+
+  .narrative-body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #B8A99A;
+  }
+
+  .narrative-body em {
+    color: #5BD9A0;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  /* ─── MOOD BOARD KEYWORDS ─── */
+  .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto 80px;
+  }
+
+  .keyword {
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #2A2A35;
+    color: #7A7268;
+  }
+
+  .keyword.gold { border-color: #F5C54240; color: #F5C542; }
+  .keyword.mint { border-color: #5BD9A040; color: #5BD9A0; }
+  .keyword.warm { border-color: #E8915040; color: #E89150; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    text-align: center;
+    padding: 40px;
+    color: #3A3530;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-title">PennyMints — Brand Concept Board</div>
+
+<!-- PRIMARY LOGO -->
+<div class="logo-section">
+  <div class="logo-primary">
+    <div class="logo-coin">
+      <div class="sparkle"></div>
+    </div>
+    <div>
+      <div class="logo-wordmark">
+        <span class="penny">Penny</span><span class="mints">Mints</span>
+      </div>
+      <div class="logo-tagline">Where pennies come to life</div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGO ALTERNATIVES -->
+<div class="section-title">Logo Variations</div>
+<div class="logo-alts">
+  <div class="logo-alt">
+    <div class="logo-alt-label">Dark Background</div>
+    <div class="mark"><span class="penny">Penny</span><span class="mints">Mints</span></div>
+  </div>
+  <div class="logo-alt light">
+    <div class="logo-alt-label">Light Background</div>
+    <div class="mark"><span class="penny">Penny</span><span class="mints">Mints</span></div>
+  </div>
+  <div class="logo-alt coin-only">
+    <div class="logo-alt-label">Icon Mark</div>
+    <div class="coin-icon">¢</div>
+  </div>
+</div>
+
+<!-- COLOR PALETTE -->
+<div class="section-title">Brand Palette</div>
+<div class="palette">
+  <div class="swatch">
+    <div class="swatch-color" style="background: linear-gradient(145deg, #F5C542, #D4A535);"></div>
+    <div class="swatch-name">Penny Gold</div>
+    <div class="swatch-hex">#F5C542</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background: linear-gradient(145deg, #5BD9A0, #3DDC97);"></div>
+    <div class="swatch-name">Mint Fresh</div>
+    <div class="swatch-hex">#5BD9A0</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background: linear-gradient(145deg, #E89150, #D47A3A);"></div>
+    <div class="swatch-name">Copper Warm</div>
+    <div class="swatch-hex">#E89150</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background: linear-gradient(145deg, #6C8EEF, #5474D4);"></div>
+    <div class="swatch-name">Trust Blue</div>
+    <div class="swatch-hex">#6C8EEF</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background: linear-gradient(145deg, #FDF8F0, #F5EDE0);"></div>
+    <div class="swatch-name">Parchment</div>
+    <div class="swatch-hex">#FDF8F0</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background: linear-gradient(145deg, #1A1A24, #0F0F18);"></div>
+    <div class="swatch-name">Vault Dark</div>
+    <div class="swatch-hex">#1A1A24</div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="section-title">Typography</div>
+<div class="type-section">
+  <div class="type-sample">
+    <div class="type-label">Display — Fredoka</div>
+    <div class="type-fredoka">The Last Penny Press</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Body — Nunito</div>
+    <div class="type-nunito">Deep in the PennyMint workshop, five friends guard the world's last pennies. Every coin tells a story. Every story teaches a lesson.</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Accent — Baloo 2</div>
+    <div class="type-baloo">+5 PennyMints earned!</div>
+  </div>
+</div>
+
+<!-- CHARACTERS -->
+<div class="section-title">Character Color System</div>
+<div class="characters">
+  <div class="char-card">
+    <div class="char-avatar" style="background: #F5A623;">🐹</div>
+    <div class="char-name" style="color: #F5A623;">Hammy</div>
+    <div class="char-role">The Earner</div>
+  </div>
+  <div class="char-card">
+    <div class="char-avatar" style="background: #5BD9A0;">🐢</div>
+    <div class="char-name" style="color: #5BD9A0;">Pearl</div>
+    <div class="char-role">The Saver</div>
+  </div>
+  <div class="char-card">
+    <div class="char-avatar" style="background: #8E8E93;">🦝</div>
+    <div class="char-name" style="color: #8E8E93;">Ziggy</div>
+    <div class="char-role">The Spender</div>
+  </div>
+  <div class="char-card">
+    <div class="char-avatar" style="background: #C4956A;">🦌</div>
+    <div class="char-name" style="color: #C4956A;">Willow</div>
+    <div class="char-role">The Giver</div>
+  </div>
+  <div class="char-card">
+    <div class="char-avatar" style="background: #E8915080; color: #E89150;">🦊</div>
+    <div class="char-name" style="color: #E89150;">Sparks</div>
+    <div class="char-role">The Thinker</div>
+  </div>
+</div>
+
+<!-- APP ICON CONCEPTS -->
+<div class="section-title">App Icon Concepts</div>
+<div class="icon-grid">
+  <div class="icon-concept">
+    <div class="icon-box icon-a">
+      <div class="inner-coin">¢</div>
+    </div>
+    <div class="icon-concept-label">Coin on Mint</div>
+  </div>
+  <div class="icon-concept">
+    <div class="icon-box icon-b">
+      <div class="stack">
+        <div class="stack-coin">PM</div>
+        <div class="stack-coin"></div>
+        <div class="stack-coin"></div>
+        <div class="stack-coin"></div>
+      </div>
+    </div>
+    <div class="icon-concept-label">Coin Stack</div>
+  </div>
+  <div class="icon-concept">
+    <div class="icon-box icon-c">
+      <div class="monogram">PM</div>
+    </div>
+    <div class="icon-concept-label">Monogram</div>
+  </div>
+  <div class="icon-concept">
+    <div class="icon-box icon-d">
+      <div class="sprout">
+        <div class="sprout-coin">¢</div>
+        <div class="sprout-leaf">🌿</div>
+      </div>
+    </div>
+    <div class="icon-concept-label">Growing Coin</div>
+  </div>
+</div>
+
+<!-- NARRATIVE -->
+<div class="section-title">Brand Story</div>
+<div class="narrative">
+  <div class="narrative-heading">The pennies are disappearing.</div>
+  <div class="narrative-body">
+    One by one, the world's pennies are going out of circulation.<br><br>
+    But deep in a hidden workshop, five friends run <em>the last PennyMint</em> — the only place still making pennies.<br><br>
+    Each penny they press holds a lesson. Each lesson sparks an adventure. And every kid who joins becomes a <em>PennyMinter</em> — a keeper of the coins the world forgot.<br><br>
+    The pennies aren't just money. They're stories waiting to be told.
+  </div>
+</div>
+
+<!-- MOOD KEYWORDS -->
+<div class="section-title">Brand Keywords</div>
+<div class="keywords">
+  <span class="keyword gold">Nostalgic</span>
+  <span class="keyword mint">Playful</span>
+  <span class="keyword warm">Warm</span>
+  <span class="keyword gold">Collectible</span>
+  <span class="keyword mint">Growing</span>
+  <span class="keyword">Trustworthy</span>
+  <span class="keyword warm">Cozy</span>
+  <span class="keyword gold">Crafted</span>
+  <span class="keyword mint">Discovery</span>
+  <span class="keyword">Woodland</span>
+  <span class="keyword warm">Storybook</span>
+  <span class="keyword gold">Precious</span>
+</div>
+
+<div class="footer">PennyMints — Brand Concept v1 — March 2026</div>
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PennyMints — Variation 5: Candy Shop</title>
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito+Sans:wght@400;600;700;800&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #FFF5F0;
+    color: #3D2828;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 40px;
+    min-height: 100vh;
+  }
+
+  .variation-tag {
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #D4A0A0;
+    margin-bottom: 12px;
+  }
+
+  .variation-name {
+    text-align: center;
+    font-family: 'Bubblegum Sans', sans-serif;
+    font-size: 18px;
+    color: #FF6B8A;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+  }
+
+  /* ─── LOGO ─── */
+  .logo-area {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .logo-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+
+  .logo-text {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 64px;
+    line-height: 1;
+    position: relative;
+  }
+
+  .logo-text .penny {
+    color: #FFB347;
+    text-shadow: 0 3px 0 #E89A30, 0 6px 15px rgba(255,179,71,0.2);
+  }
+
+  .logo-text .mints {
+    color: #5BD9A0;
+    text-shadow: 0 3px 0 #3DB87E, 0 6px 15px rgba(91,217,160,0.2);
+  }
+
+  .logo-stars {
+    font-size: 20px;
+    margin-top: 4px;
+    letter-spacing: 8px;
+  }
+
+  .logo-tagline {
+    font-family: 'Bubblegum Sans', sans-serif;
+    font-size: 18px;
+    color: #FF6B8A;
+    margin-top: 8px;
+  }
+
+  /* ─── PALETTE ─── */
+  .section-label {
+    font-family: 'Bubblegum Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #D4A0A0;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .palette {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+  }
+
+  .swatch { text-align: center; }
+
+  .swatch-candy {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    margin: 0 auto 8px;
+    transform: rotate(-3deg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  .swatch-candy:nth-child(even) { transform: rotate(3deg); }
+
+  .swatch-name { font-size: 11px; font-weight: 700; color: #3D2828; }
+  .swatch-hex { font-size: 10px; color: #D4A0A0; font-family: monospace; }
+
+  /* ─── ICONS ─── */
+  .icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 640px;
+    margin: 0 auto 60px;
+  }
+
+  .icon-card { text-align: center; }
+
+  .icon-box {
+    width: 110px;
+    height: 110px;
+    border-radius: 30px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-label { font-size: 11px; color: #D4A0A0; }
+
+  .icon-bubblegum {
+    background: linear-gradient(135deg, #FF6B8A, #FF4570);
+    box-shadow: 0 8px 24px rgba(255,107,138,0.25);
+  }
+  .icon-bubblegum .inner {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #FFB347, #FF9A20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 28px;
+    color: #FFF;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  }
+
+  .icon-rainbow {
+    background: linear-gradient(135deg, #FFB347, #FF6B8A, #B088F9, #5BD9A0);
+    box-shadow: 0 8px 24px rgba(255,179,71,0.15);
+  }
+  .icon-rainbow .inner {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 38px;
+    color: #FFF;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+  .icon-mint-candy {
+    background: repeating-linear-gradient(
+      -45deg,
+      #5BD9A0,
+      #5BD9A0 12px,
+      #FFF 12px,
+      #FFF 24px
+    );
+    border: 3px solid #5BD9A020;
+  }
+  .icon-mint-candy .inner {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 24px;
+    color: #5BD9A0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .icon-wrapper {
+    background: linear-gradient(135deg, #FFB347, #FFC870);
+    position: relative;
+    box-shadow: 0 8px 24px rgba(255,179,71,0.2);
+  }
+  .icon-wrapper::before,
+  .icon-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background: #FFD78A;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .icon-wrapper::before { left: -6px; border-radius: 0 50% 50% 0; }
+  .icon-wrapper::after { right: -6px; border-radius: 50% 0 0 50%; }
+  .icon-wrapper .inner {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 30px;
+    color: #FFF;
+    z-index: 1;
+    position: relative;
+  }
+
+  /* ─── TYPE ─── */
+  .type-grid {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .type-box {
+    background: #FFF;
+    border: 2px solid #FFE8E0;
+    border-radius: 18px;
+    padding: 24px;
+  }
+
+  .type-label { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #D4A0A0; margin-bottom: 8px; }
+  .type-display { font-family: 'Cherry Bomb One', cursive; font-size: 28px; color: #FF6B8A; }
+  .type-body { font-family: 'Nunito Sans', sans-serif; font-size: 15px; color: #6B4A4A; line-height: 1.7; }
+  .type-accent { font-family: 'Bubblegum Sans', sans-serif; font-size: 26px; color: #FFB347; }
+
+  /* ─── CHARS ─── */
+  .chars {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+  }
+
+  .char {
+    background: #FFF;
+    border: 2px solid #FFE8E0;
+    border-radius: 18px;
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 100px;
+  }
+
+  .char-emoji { font-size: 28px; margin-bottom: 4px; }
+  .char-name { font-family: 'Bubblegum Sans', sans-serif; font-size: 15px; }
+  .char-role { font-size: 10px; color: #D4A0A0; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ─── NARRATIVE ─── */
+  .story-panel {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    background: #FFF;
+    border: 3px solid #FFE8E0;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  .story-panel::before {
+    content: '🍬';
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+  }
+
+  .story-panel h2 {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 24px;
+    color: #FF6B8A;
+    margin-bottom: 16px;
+  }
+
+  .story-panel p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #8A6A6A;
+  }
+
+  .story-panel em {
+    font-family: 'Bubblegum Sans', sans-serif;
+    font-size: 18px;
+    color: #FFB347;
+    font-style: normal;
+  }
+
+  .mood {
+    text-align: center;
+    font-family: 'Bubblegum Sans', sans-serif;
+    font-size: 18px;
+    color: #E8C0C0;
+    padding: 40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="variation-tag">Variation 5 of 5</div>
+<div class="variation-name">🍬 Candy Shop 🍬</div>
+
+<div class="logo-area">
+  <div class="logo-wrapper">
+    <div class="logo-text">
+      <span class="penny">Penny</span><span class="mints">Mints</span>
+    </div>
+    <div class="logo-stars">⭐ ⭐ ⭐</div>
+  </div>
+  <div class="logo-tagline">sweet lessons, real rewards!</div>
+</div>
+
+<div class="section-label">Palette</div>
+<div class="palette">
+  <div class="swatch">
+    <div class="swatch-candy" style="background: linear-gradient(135deg, #FFB347, #FF9A20);"></div>
+    <div class="swatch-name">Butterscotch</div>
+    <div class="swatch-hex">#FFB347</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-candy" style="background: linear-gradient(135deg, #5BD9A0, #3DB87E);"></div>
+    <div class="swatch-name">Spearmint</div>
+    <div class="swatch-hex">#5BD9A0</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-candy" style="background: linear-gradient(135deg, #FF6B8A, #FF4570);"></div>
+    <div class="swatch-name">Bubblegum</div>
+    <div class="swatch-hex">#FF6B8A</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-candy" style="background: linear-gradient(135deg, #B088F9, #9060E8);"></div>
+    <div class="swatch-name">Grape Drop</div>
+    <div class="swatch-hex">#B088F9</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-candy" style="background: #FFF5F0;"></div>
+    <div class="swatch-name">Cotton Candy</div>
+    <div class="swatch-hex">#FFF5F0</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-candy" style="background: #3D2828;"></div>
+    <div class="swatch-name">Chocolate</div>
+    <div class="swatch-hex">#3D2828</div>
+  </div>
+</div>
+
+<div class="section-label">App Icons</div>
+<div class="icons">
+  <div class="icon-card">
+    <div class="icon-box icon-bubblegum"><div class="inner">¢</div></div>
+    <div class="icon-label">Bubblegum</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-rainbow"><div class="inner">PM</div></div>
+    <div class="icon-label">Rainbow</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-mint-candy"><div class="inner">¢</div></div>
+    <div class="icon-label">Mint Candy</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-wrapper"><div class="inner">PM</div></div>
+    <div class="icon-label">Wrapper</div>
+  </div>
+</div>
+
+<div class="section-label">Typography</div>
+<div class="type-grid">
+  <div class="type-box">
+    <div class="type-label">Display — Cherry Bomb One</div>
+    <div class="type-display">Sweet Savings!</div>
+  </div>
+  <div class="type-box">
+    <div class="type-label">Body — Nunito Sans</div>
+    <div class="type-body">Hammy raced to the candy store with a pocketful of pennies. "Three lollipops!" he shouted. Pearl gently tapped his shoulder. "But if you save two pennies today..."</div>
+  </div>
+  <div class="type-box">
+    <div class="type-label">Playful — Bubblegum Sans</div>
+    <div class="type-accent">Yay! You saved 5 PennyMints!</div>
+  </div>
+</div>
+
+<div class="section-label">Characters</div>
+<div class="chars">
+  <div class="char"><div class="char-emoji">🐹</div><div class="char-name" style="color:#FFB347;">Hammy</div><div class="char-role">Earner</div></div>
+  <div class="char"><div class="char-emoji">🐢</div><div class="char-name" style="color:#5BD9A0;">Pearl</div><div class="char-role">Saver</div></div>
+  <div class="char"><div class="char-emoji">🦝</div><div class="char-name" style="color:#8A8A8A;">Ziggy</div><div class="char-role">Spender</div></div>
+  <div class="char"><div class="char-emoji">🦌</div><div class="char-name" style="color:#C4956A;">Willow</div><div class="char-role">Giver</div></div>
+  <div class="char"><div class="char-emoji">🦊</div><div class="char-name" style="color:#FF6B8A;">Sparks</div><div class="char-role">Thinker</div></div>
+</div>
+
+<div class="section-label">Brand Story</div>
+<div class="story-panel">
+  <h2>Every penny is a treat!</h2>
+  <p>
+    Remember penny candy? A whole world of choices for just one tiny coin.<br><br>
+    PennyMints brings that magic back. Each penny you earn is a <em>sweet little lesson</em> wrapped up in a story. Save them, spend them wisely, share them with friends.<br><br>
+    Because the best treats aren't the ones you eat — they're the ones that make you <em>smarter</em>.
+  </p>
+</div>
+
+<div class="mood">sweet · joyful · bright · collectible · playful · delightful</div>
+
+</body>
+</html>

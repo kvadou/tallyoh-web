@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PennyMints — Variation 4: Retro Mint</title>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Inter:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1A2F35;
+    color: #E0EDE8;
+    font-family: 'Inter', sans-serif;
+    padding: 40px;
+    min-height: 100vh;
+  }
+
+  .variation-tag {
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #4A7A6A;
+    margin-bottom: 12px;
+  }
+
+  .variation-name {
+    text-align: center;
+    font-family: 'Righteous', sans-serif;
+    font-size: 16px;
+    color: #66DDAA;
+    margin-bottom: 60px;
+    letter-spacing: 3px;
+  }
+
+  /* ─── LOGO ─── */
+  .logo-area {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .logo-container {
+    display: inline-block;
+    position: relative;
+  }
+
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #66DDAA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    position: relative;
+    background: radial-gradient(circle, #1E3840, #1A2F35);
+    box-shadow: 0 0 0 8px #1A2F35, 0 0 0 10px #66DDAA40, 0 0 40px rgba(102,221,170,0.1);
+  }
+
+  .logo-circle-text-top {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #66DDAA;
+    position: absolute;
+    top: 20px;
+  }
+
+  .logo-circle-main {
+    font-family: 'Righteous', sans-serif;
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .logo-circle-main .penny { color: #F5D060; }
+  .logo-circle-main .mints { color: #66DDAA; }
+
+  .logo-circle-year {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #4A7A6A;
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .logo-tagline {
+    font-family: 'Pacifico', cursive;
+    font-size: 18px;
+    color: #66DDAA80;
+  }
+
+  /* Small inline version */
+  .logo-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .logo-inline-coin {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #66DDAA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Righteous', sans-serif;
+    font-size: 16px;
+    color: #F5D060;
+  }
+
+  .logo-inline-text {
+    font-family: 'Righteous', sans-serif;
+    font-size: 24px;
+  }
+
+  .logo-inline-text .penny { color: #F5D060; }
+  .logo-inline-text .mints { color: #66DDAA; }
+
+  /* ─── PALETTE ─── */
+  .section-label {
+    font-family: 'Righteous', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #4A7A6A;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .palette {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+  }
+
+  .swatch { text-align: center; }
+
+  .swatch-rect {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    margin: 0 auto 8px;
+    border: 2px solid rgba(255,255,255,0.05);
+  }
+
+  .swatch-name { font-size: 11px; font-weight: 600; color: #E0EDE8; }
+  .swatch-hex { font-size: 10px; color: #4A7A6A; font-family: monospace; }
+
+  /* ─── ICONS ─── */
+  .icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 640px;
+    margin: 0 auto 60px;
+  }
+
+  .icon-card { text-align: center; }
+
+  .icon-box {
+    width: 110px;
+    height: 110px;
+    border-radius: 26px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-label { font-size: 11px; color: #4A7A6A; }
+
+  .icon-mint-tin {
+    background: linear-gradient(135deg, #2A4A48, #1A3530);
+    border: 2px solid #66DDAA;
+  }
+  .icon-mint-tin .inner {
+    font-family: 'Righteous', sans-serif;
+    font-size: 36px;
+    color: #66DDAA;
+  }
+
+  .icon-embossed {
+    background: linear-gradient(145deg, #F5D060, #D4A535);
+    box-shadow: 0 6px 20px rgba(245,208,96,0.2);
+  }
+  .icon-embossed .inner {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 3px solid #8B6914;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Righteous', sans-serif;
+    font-size: 28px;
+    color: #8B6914;
+  }
+
+  .icon-vintage {
+    background: #0F2025;
+    border: 2px solid #66DDAA30;
+  }
+  .icon-vintage .inner {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #F5D06060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    color: #F5D060;
+  }
+
+  .icon-badge {
+    background: linear-gradient(135deg, #66DDAA, #44BB88);
+    box-shadow: 0 6px 20px rgba(102,221,170,0.2);
+  }
+  .icon-badge .inner {
+    font-family: 'Righteous', sans-serif;
+    font-size: 34px;
+    color: #1A2F35;
+  }
+
+  /* ─── TYPE ─── */
+  .type-grid {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .type-box {
+    background: #152830;
+    border: 1px solid #2A4A48;
+    border-radius: 14px;
+    padding: 24px;
+  }
+
+  .type-label { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #4A7A6A; margin-bottom: 8px; }
+  .type-display { font-family: 'Righteous', sans-serif; font-size: 28px; color: #66DDAA; }
+  .type-body { font-family: 'Inter', sans-serif; font-size: 15px; color: #8AB8A0; line-height: 1.7; }
+  .type-accent { font-family: 'Pacifico', cursive; font-size: 24px; color: #F5D060; }
+
+  /* ─── CHARS ─── */
+  .chars {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+  }
+
+  .char {
+    background: #152830;
+    border: 1px solid #2A4A48;
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 100px;
+  }
+
+  .char-emoji { font-size: 28px; margin-bottom: 4px; }
+  .char-name { font-family: 'Righteous', sans-serif; font-size: 13px; }
+  .char-role { font-size: 10px; color: #4A7A6A; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ─── NARRATIVE ─── */
+  .story-panel {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    background: #152830;
+    border: 2px solid #66DDAA30;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .story-panel h2 {
+    font-family: 'Righteous', sans-serif;
+    font-size: 22px;
+    color: #66DDAA;
+    margin-bottom: 16px;
+  }
+
+  .story-panel p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #6A9A88;
+  }
+
+  .story-panel em {
+    font-family: 'Pacifico', cursive;
+    font-size: 18px;
+    color: #F5D060;
+    font-style: normal;
+  }
+
+  .mood {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 16px;
+    color: #2A4A48;
+    padding: 40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="variation-tag">Variation 4 of 5</div>
+<div class="variation-name">🪙 Retro Mint Tin 🪙</div>
+
+<div class="logo-area">
+  <div class="logo-container">
+    <div class="logo-circle">
+      <div class="logo-circle-text-top">EST. 2026</div>
+      <div class="logo-circle-main">
+        <span class="penny">Penny</span><br><span class="mints">Mints</span>
+      </div>
+      <div class="logo-circle-year">● THE LAST MINT ●</div>
+    </div>
+  </div>
+  <div class="logo-tagline">freshly pressed for curious minds</div>
+
+  <div class="logo-inline">
+    <div class="logo-inline-coin">¢</div>
+    <div class="logo-inline-text">
+      <span class="penny">Penny</span><span class="mints">Mints</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Palette</div>
+<div class="palette">
+  <div class="swatch">
+    <div class="swatch-rect" style="background: #F5D060;"></div>
+    <div class="swatch-name">Pressed Gold</div>
+    <div class="swatch-hex">#F5D060</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-rect" style="background: #66DDAA;"></div>
+    <div class="swatch-name">Mint Patina</div>
+    <div class="swatch-hex">#66DDAA</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-rect" style="background: #D4735A;"></div>
+    <div class="swatch-name">Copper Oxide</div>
+    <div class="swatch-hex">#D4735A</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-rect" style="background: #E0EDE8;"></div>
+    <div class="swatch-name">Silver Fog</div>
+    <div class="swatch-hex">#E0EDE8</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-rect" style="background: #2A4A48;"></div>
+    <div class="swatch-name">Verdigris</div>
+    <div class="swatch-hex">#2A4A48</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-rect" style="background: #1A2F35;"></div>
+    <div class="swatch-name">Deep Patina</div>
+    <div class="swatch-hex">#1A2F35</div>
+  </div>
+</div>
+
+<div class="section-label">App Icons</div>
+<div class="icons">
+  <div class="icon-card">
+    <div class="icon-box icon-mint-tin"><div class="inner">¢</div></div>
+    <div class="icon-label">Mint Tin</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-embossed"><div class="inner">PM</div></div>
+    <div class="icon-label">Embossed Coin</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-vintage"><div class="inner">PM</div></div>
+    <div class="icon-label">Vintage Seal</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-badge"><div class="inner">PM</div></div>
+    <div class="icon-label">Mint Badge</div>
+  </div>
+</div>
+
+<div class="section-label">Typography</div>
+<div class="type-grid">
+  <div class="type-box">
+    <div class="type-label">Display — Righteous</div>
+    <div class="type-display">The Last Mint Standing</div>
+  </div>
+  <div class="type-box">
+    <div class="type-label">Body — Inter</div>
+    <div class="type-body">Every penny pressed at the PennyMint carries a mark — a tiny symbol that tells its story. Collect them all, and you'll unlock something no one's seen in years.</div>
+  </div>
+  <div class="type-box">
+    <div class="type-label">Script — Pacifico</div>
+    <div class="type-accent">freshly minted just for you</div>
+  </div>
+</div>
+
+<div class="section-label">Characters</div>
+<div class="chars">
+  <div class="char"><div class="char-emoji">🐹</div><div class="char-name" style="color:#F5D060;">Hammy</div><div class="char-role">Earner</div></div>
+  <div class="char"><div class="char-emoji">🐢</div><div class="char-name" style="color:#66DDAA;">Pearl</div><div class="char-role">Saver</div></div>
+  <div class="char"><div class="char-emoji">🦝</div><div class="char-name" style="color:#A0B8B0;">Ziggy</div><div class="char-role">Spender</div></div>
+  <div class="char"><div class="char-emoji">🦌</div><div class="char-name" style="color:#D4A070;">Willow</div><div class="char-role">Giver</div></div>
+  <div class="char"><div class="char-emoji">🦊</div><div class="char-name" style="color:#D4735A;">Sparks</div><div class="char-role">Thinker</div></div>
+</div>
+
+<div class="section-label">Brand Story</div>
+<div class="story-panel">
+  <h2>Minted in 2026. The last of its kind.</h2>
+  <p>
+    When the world retired the penny, five friends refused to let it go.<br><br>
+    They found an old mint — rusted gears, dusty presses, faded blueprints — and brought it back to life. Now every penny they press is <em>one of a kind</em>.<br><br>
+    Not because they're rare. Because each one carries a <em>lesson worth keeping</em>.
+  </p>
+</div>
+
+<div class="mood">vintage · collectible · patina · crafted · timeless · mint-condition</div>
+
+</body>
+</html>

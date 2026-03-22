@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PennyMints — Variation 3: Nature Soft</title>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #F0F5EC;
+    color: #2C3E2D;
+    font-family: 'Poppins', sans-serif;
+    padding: 40px;
+    min-height: 100vh;
+  }
+
+  .variation-tag {
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #8CA88E;
+    margin-bottom: 12px;
+  }
+
+  .variation-name {
+    text-align: center;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 16px;
+    color: #5A7D5E;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+  }
+
+  /* ─── LOGO ─── */
+  .logo-area {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .logo-cluster {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-leaf {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #7CB87E, #5A9A5E);
+    border-radius: 50% 10% 50% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(90,154,94,0.25);
+    transform: rotate(-15deg);
+  }
+
+  .logo-leaf-inner {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFF;
+    transform: rotate(15deg);
+  }
+
+  .logo-text {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .logo-text .penny { color: #D4A535; }
+  .logo-text .mints { color: #5A9A5E; }
+
+  .logo-tagline {
+    font-family: 'Kalam', cursive;
+    font-size: 18px;
+    color: #8CA88E;
+    margin-top: 8px;
+  }
+
+  /* ─── PALETTE ─── */
+  .section-label {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #8CA88E;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .palette {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+  }
+
+  .swatch { text-align: center; }
+
+  .swatch-blob {
+    width: 72px;
+    height: 72px;
+    border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%;
+    margin: 0 auto 8px;
+  }
+
+  .swatch-name { font-size: 11px; font-weight: 600; color: #2C3E2D; }
+  .swatch-hex { font-size: 10px; color: #8CA88E; font-family: monospace; }
+
+  /* ─── ICONS ─── */
+  .icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 640px;
+    margin: 0 auto 60px;
+  }
+
+  .icon-card { text-align: center; }
+
+  .icon-box {
+    width: 110px;
+    height: 110px;
+    border-radius: 26px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-label { font-size: 11px; color: #8CA88E; }
+
+  .icon-meadow {
+    background: linear-gradient(135deg, #B8D8B0, #8CC88A);
+    box-shadow: 0 6px 20px rgba(140,200,138,0.2);
+  }
+  .icon-meadow .inner {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #F5D060, #D4A535);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #7A5A10;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+
+  .icon-earth {
+    background: linear-gradient(135deg, #5A7D5E, #3D5A40);
+  }
+  .icon-earth .inner {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #F5D060;
+  }
+
+  .icon-sunrise {
+    background: linear-gradient(180deg, #F8E8C0, #F5D060 40%, #E8B530 100%);
+  }
+  .icon-sunrise .inner {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #5A7D5E;
+  }
+
+  .icon-leaf-shape {
+    background: linear-gradient(135deg, #F0F5EC, #D8E8D0);
+    border: 2px solid #B8D8B0;
+  }
+  .icon-leaf-shape .inner {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #7CB87E, #5A9A5E);
+    border-radius: 50% 10% 50% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFF;
+    transform: rotate(-10deg);
+  }
+
+  /* ─── TYPE ─── */
+  .type-grid {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .type-box {
+    background: #FAFDF8;
+    border: 1.5px solid #D0E0CC;
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .type-label { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #8CA88E; margin-bottom: 8px; }
+  .type-display { font-family: 'Comfortaa', sans-serif; font-size: 28px; font-weight: 700; color: #5A7D5E; }
+  .type-body { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 400; color: #4A6A4C; line-height: 1.7; }
+  .type-accent { font-family: 'Kalam', cursive; font-size: 24px; color: #D4A535; }
+
+  /* ─── CHARS ─── */
+  .chars {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+  }
+
+  .char {
+    background: #FAFDF8;
+    border: 1.5px solid #D0E0CC;
+    border-radius: 16px;
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 100px;
+  }
+
+  .char-emoji { font-size: 28px; margin-bottom: 4px; }
+  .char-name { font-family: 'Comfortaa', sans-serif; font-size: 13px; font-weight: 700; }
+  .char-role { font-size: 10px; color: #8CA88E; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ─── NARRATIVE ─── */
+  .story-panel {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    background: #FAFDF8;
+    border: 1.5px solid #D0E0CC;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .story-panel h2 {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 22px;
+    color: #5A7D5E;
+    margin-bottom: 16px;
+  }
+
+  .story-panel p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #5A7A5C;
+  }
+
+  .story-panel em {
+    font-family: 'Kalam', cursive;
+    font-size: 18px;
+    color: #D4A535;
+    font-style: normal;
+  }
+
+  .mood {
+    text-align: center;
+    font-family: 'Kalam', cursive;
+    font-size: 18px;
+    color: #8CA88E;
+    padding: 40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="variation-tag">Variation 3 of 5</div>
+<div class="variation-name">🌿 Nature Soft 🌿</div>
+
+<div class="logo-area">
+  <div class="logo-cluster">
+    <div class="logo-leaf"><div class="logo-leaf-inner">¢</div></div>
+    <div>
+      <div class="logo-text">
+        <span class="penny">Penny</span><span class="mints">Mints</span>
+      </div>
+      <div class="logo-tagline">growing smarter, one penny at a time</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Palette</div>
+<div class="palette">
+  <div class="swatch">
+    <div class="swatch-blob" style="background: linear-gradient(135deg, #F5D060, #D4A535);"></div>
+    <div class="swatch-name">Sunflower</div>
+    <div class="swatch-hex">#F5D060</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-blob" style="background: linear-gradient(135deg, #7CB87E, #5A9A5E);"></div>
+    <div class="swatch-name">Meadow</div>
+    <div class="swatch-hex">#7CB87E</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-blob" style="background: linear-gradient(135deg, #E8A060, #D48840);"></div>
+    <div class="swatch-name">Acorn</div>
+    <div class="swatch-hex">#E8A060</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-blob" style="background: linear-gradient(135deg, #88BBE8, #6AA0D4);"></div>
+    <div class="swatch-name">Creek</div>
+    <div class="swatch-hex">#88BBE8</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-blob" style="background: linear-gradient(135deg, #F0F5EC, #D8E8D0);"></div>
+    <div class="swatch-name">Morning Mist</div>
+    <div class="swatch-hex">#F0F5EC</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-blob" style="background: linear-gradient(135deg, #2C3E2D, #1A2A1B);"></div>
+    <div class="swatch-name">Deep Forest</div>
+    <div class="swatch-hex">#2C3E2D</div>
+  </div>
+</div>
+
+<div class="section-label">App Icons</div>
+<div class="icons">
+  <div class="icon-card">
+    <div class="icon-box icon-meadow"><div class="inner">¢</div></div>
+    <div class="icon-label">Meadow Coin</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-earth"><div class="inner">PM</div></div>
+    <div class="icon-label">Earth Tone</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-sunrise"><div class="inner">PM</div></div>
+    <div class="icon-label">Sunrise</div>
+  </div>
+  <div class="icon-card">
+    <div class="icon-box icon-leaf-shape"><div class="inner">¢</div></div>
+    <div class="icon-label">Leaf Mark</div>
+  </div>
+</div>
+
+<div class="section-label">Typography</div>
+<div class="type-grid">
+  <div class="type-box">
+    <div class="type-label">Display — Comfortaa</div>
+    <div class="type-display">A Penny in the Meadow</div>
+  </div>
+  <div class="type-box">
+    <div class="type-label">Body — Poppins</div>
+    <div class="type-body">Pearl found a shiny penny half-buried in the soft earth near the creek. She turned it over in her hands and wondered — what could this tiny coin become?</div>
+  </div>
+  <div class="type-box">
+    <div class="type-label">Handwritten — Kalam</div>
+    <div class="type-accent">Your garden grew 2 new pennies!</div>
+  </div>
+</div>
+
+<div class="section-label">Characters</div>
+<div class="chars">
+  <div class="char"><div class="char-emoji">🐹</div><div class="char-name" style="color:#D4A535;">Hammy</div><div class="char-role">Earner</div></div>
+  <div class="char"><div class="char-emoji">🐢</div><div class="char-name" style="color:#5A9A5E;">Pearl</div><div class="char-role">Saver</div></div>
+  <div class="char"><div class="char-emoji">🦝</div><div class="char-name" style="color:#7A7A7A;">Ziggy</div><div class="char-role">Spender</div></div>
+  <div class="char"><div class="char-emoji">🦌</div><div class="char-name" style="color:#B08860;">Willow</div><div class="char-role">Giver</div></div>
+  <div class="char"><div class="char-emoji">🦊</div><div class="char-name" style="color:#E8A060;">Sparks</div><div class="char-role">Thinker</div></div>
+</div>
+
+<div class="section-label">Brand Story</div>
+<div class="story-panel">
+  <h2>Small things grow.</h2>
+  <p>
+    In a quiet meadow where five woodland friends live, something magical grows: <em>penny seeds</em>.<br><br>
+    Plant a lesson, water it with curiosity, and watch it bloom into something real. A penny saved. A penny earned. A penny shared.<br><br>
+    The world may have forgotten the penny, but in this meadow, <em>every small thing matters</em>.
+  </p>
+</div>
+
+<div class="mood">gentle · organic · nurturing · growth · calm · wholesome</div>
+
+</body>
+</html>
